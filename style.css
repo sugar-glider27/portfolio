@@ -1,15 +1,35 @@
 html {
   --color-accent: oklch(51.475% 0.0623 231.491);
+  
+  --light-background-color: oklch(from var(--color-accent) 95% 5% h);
+  --dark-background-color: oklch(from var(--color-accent) 20% 5% h);
+  
+  --light-heading-color: oklch(from var(--color-accent) 27% c h);
+  --dark-heading-color: oklch(from var(--color-accent) 85% c h);
+  
+  --light-border-bottom-color: oklch(80% 3% 200);
+  --dark-border-bottom-color: oklch(60% 3% 200);
+
+  --light-section-heading-color: var(--color-accent);
+  --dark-section-heading-color: oklch(from var(--color-accent) 75% c h);
+
+  --light-input-color: oklch(98% 0.015 250);
+  --dark-input-color: oklch(from var(--color-accent) 27% 5% h);
+
   accent-color: var(--color-accent);
+  color-scheme: light dark;
 }
 
 body {
   /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
+     and use the OS’s UI font as the website font
+   */
   font: 100%/1.5 system-ui;
   /* background-color: lightblue; */
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: light-dark(
+    var(--light-background-color),
+    var(--dark-background-color)
+  );
   max-width: 100ch;
   margin-inline: auto;
   padding: 5ch;
@@ -24,7 +44,10 @@ nav {
   display: flex;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom-color: light-dark(
+    var(--light-border-bottom-color),
+    var(--dark-border-bottom-color)
+  );
   margin-bottom: 1em;
 }
 
@@ -38,7 +61,10 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid light-dark(
+    var(--light-border-bottom-color),
+    var(--dark-border-bottom-color)
+  );
   padding-bottom: 0.1em;
 }
 
@@ -46,8 +72,23 @@ nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
 }
 
-input, textarea, button {
+input, textarea, button, select {
   font: inherit;
+}
+
+input, textarea {
+  background-color: light-dark(
+    var(--light-input-color),
+    var(--dark-input-color)
+  );
+
+  border: 1px solid light-dark(
+    var(--light-border-bottom-color),
+    var(--dark-border-bottom-color)
+  );
+
+  padding: 0.4em;
+  border-radius: 0.4em;
 }
 
 button {
@@ -83,7 +124,10 @@ label {
 
 h1 {
   font-size: 400%;
-  color: oklch(from var(--color-accent) 27% c h);
+  color: light-dark(
+    var(--light-heading-color),
+    var(--dark-heading-color)
+  );
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,8 +140,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .resume section h2 {
-  color: var(--color-accent);
-  border-bottom: 2px solid oklch(80% 3% 200);
+  color: light-dark(
+    var(--light-section-heading-color),
+    var(--dark-section-heading-color)
+  );
+
+  border-bottom: 2px solid light-dark(
+    var(--light-border-bottom-color),
+    var(--dark-border-bottom-color)
+  );
+  
   padding-bottom: 0.1em;
 }
 
@@ -118,7 +170,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .resume section a {
-  color: var(--color-accent);
+  color: light-dark(
+    var(--light-section-heading-color),
+    var(--dark-section-heading-color)
+  );
 }
 
 .resume h3 img {
@@ -131,4 +186,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .resume .skills p {
   margin-block: 0.3em;
+}
+
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }

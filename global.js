@@ -26,7 +26,7 @@ document.body.prepend(nav);
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                  // Local server
-  : "/website/";         // GitHub Pages repo name replace with sugar-glider27.github.io??
+  : "/portfolio/";         // GitHub Pages repo name, replace with sugar-glider27.github.io??
 
 for (let p of pages) {
   let url = p.url;
@@ -85,7 +85,7 @@ form?.addEventListener('submit', function (event) {
   let url = form.action + "?";
 
   let data = new FormData(form);
-  
+
   for (let [name, value] of data) {
     console.log(name, encodeURIComponent(value));
     url += name + "=" + encodeURIComponent(value) + "&";

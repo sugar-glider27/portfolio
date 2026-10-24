@@ -263,4 +263,5 @@ h1, h2, h3, h4, h5, h6 {
     var(--light-section-heading-color),
     var(--dark-section-heading-color)
   );
+  font-size: 2rem;
 }

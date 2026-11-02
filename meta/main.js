@@ -125,7 +125,7 @@ function renderScatterPlot(commits) {
     .attr('fill', 'steelblue')
     .style('fill-opacity', 0.7)
     .on('mouseenter', (event, commit) => {
-        d3.select(event.currentTarget).style('fill-opacity', 1);
+        d3.select(event.currentTarget).style('fill-opacity', 0.85);
         renderTooltipContent(commit);
         updateTooltipVisibility(true);
         updateTooltipPosition(event);
@@ -235,8 +235,24 @@ function updateTooltipVisibility(isVisible) {
 
 function updateTooltipPosition(event) {
   const tooltip = document.getElementById('commit-tooltip');
-  tooltip.style.left = `${event.clientX}px`;
-  tooltip.style.top = `${event.clientY}px`;
+  const offset = 12;
+  const rect = tooltip.getBoundingClientRect();
+  const width = rect.width;
+  const height = rect.height;
+  
+  let x = event.clientX + offset;
+  let y = event.clientY + offset;
+
+  if (x + width > window.innerWidth) {
+    x = event.clientX - width - offset;
+  }
+
+  if (y + height > window.innerHeight) {
+    y = event.clientY - height - offset;
+  }
+
+  tooltip.style.left = `${Math.max(0, x)}px`;
+  tooltip.style.top = `${Math.max(0, y)}px`;
 }
 
 

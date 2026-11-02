@@ -414,9 +414,28 @@ circle:hover {
   transform: scale(1.5);
 }
 
+circle.selected {
+  fill: #ff6b6b;
+}
+
 .meta-heading {
   color: light-dark(
     var(--light-section-heading-color),
     var(--dark-section-heading-color)
   );
 }
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.brush .selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+

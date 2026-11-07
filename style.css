@@ -439,3 +439,22 @@ circle.selected {
   animation: marching-ants 2s linear infinite;
 }
 
+
+
+#language-breakdown dt {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+#language-breakdown dd {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#selection-count {
+  color: light-dark(
+    var(--light-section-heading-color),
+    var(--dark-section-heading-color)
+  );
+}

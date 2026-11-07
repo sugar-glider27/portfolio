@@ -281,8 +281,10 @@ function renderLanguageBreakdown(selectedCommits) {
     const formatted = d3.format('.1~%')(proportion);
 
     container.innerHTML += `
-            <dt>${language}</dt>
-            <dd>${count} lines (${formatted})</dd>
+            <div>
+              <dt>${language}</dt>
+              <dd>${count} lines (${formatted})</dd>
+            </div>
         `;
   }
 }

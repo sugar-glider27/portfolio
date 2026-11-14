@@ -18,10 +18,11 @@
     "year": 2026
   },
   {
-    "title": "Magnam ea assumenda fugit.",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Dignissimos, fugiat? Nemo aspernatur iusto nihil praesentium dolorem ex eligendi placeat sed, possimus sint fugit veritatis facere excepturi facilis, ratione mollitia aut. Amet accusantium accusamus itaque enim reiciendis tenetur repellendus.",
-    "year": 2025
+    "title": "Bikewatching",
+    "image": "images/bike-map.png",
+    "description": "An interactive map of Boston and Cambridge bike lanes and Bluebikes stations. Filter rides by time of day to explore traffic volume and the balance between arrivals and departures.",
+    "year": 2026,
+    "url": "https://sugar-glider27.github.io/bike-map/"
   },
   {
     "title": "Minus veritatis reiciendis officiis.",

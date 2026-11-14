@@ -134,7 +134,7 @@ form label {
 .projects article {
   display: grid;
   grid-template-rows: subgrid;
-  grid-row: span 4;
+  grid-row: span 5;
   h2 {
     margin: 0;
     color: light-dark(
@@ -142,6 +142,10 @@ form label {
       var(--dark-project-heading-color)
     );
   }
+}
+
+.projects article > p {
+  margin-block: 0;
 }
 
 .project-year {

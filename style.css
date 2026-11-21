@@ -474,10 +474,18 @@ circle.selected {
 
 #time-filter input {
   flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 #time-filter time {
   margin-left: auto;
+  flex: 0 0 34ch;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 #files {
